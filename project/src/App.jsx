@@ -44,7 +44,7 @@ function App() {
         <label>is what % of </label>
         <br />
         <input type="number" onChange={(e) => setNum2(e.target.value)} value={num2} />
-        <p className='color:"red"'>Answer {` ${percent} %`}</p>
+        <p style={{color:"red"}}>Answer {` ${percent} %`}</p>
         <div className="box-container"> {/* Container for the boxes */}
           <div className='d-flex '><p className='m-3'>{num2}</p>
           {showRedBox && num1 && num2 && ( // Render red box if showRedBox is true and num1 and num2 are provided
