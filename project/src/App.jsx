@@ -34,7 +34,7 @@ function App() {
       {/* <h1 className='btn btn-block'>Calculation 2</h1> */}
       
           <div>
-            <h4>Fabric Shrinkage Calculator</h4>
+            <h2>Fabric Shrinkage Calculator</h2>
             <div className='select1'>
               <input type="text" placeholder="Enter fabric" />
               <select name="" id="" placeholder="select Wash Type" value="Select Wash Type">

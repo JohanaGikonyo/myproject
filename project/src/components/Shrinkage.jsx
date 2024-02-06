@@ -2,7 +2,10 @@
 
 function Shrinkage() {
   return (
-    <div>Shrinkage</div>
+    <div>
+        <h1>Fabric Shrinkage Update</h1>
+    
+    </div>
   )
 }
 
