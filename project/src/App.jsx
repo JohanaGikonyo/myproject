@@ -47,7 +47,7 @@ function App() {
         <p style={{color:"red"}}>Answer {` ${percent} %`}</p>
         <div className="box-container"> {/* Container for the boxes */}
           <div className='d-flex '><p className='m-3'>{num2}</p>
-          {showRedBox && num1 && num2 && ( // Render red box if showRedBox is true and num1 and num2 are provided
+          { num1 && num2 && ( // Render red box if showRedBox is true and num1 and num2 are provided
               <div
                 className="box" /* Apply both classes */
                 style={{ height: `${num2}vh` }}
@@ -62,7 +62,7 @@ function App() {
             <div
               className="box red-box" /* Apply both classes */
               style={{ width: `${(((num1 / num2) * 100) / 100) * 40}vh` , height:`${num2}vh`}}
-            >{((((num1 / num2) * 100) / 100) * 40)}</div>
+            >{num1}</div>
           )}
         </div>
         <div className='submits'>
