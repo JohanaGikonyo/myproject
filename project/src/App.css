@@ -4,39 +4,52 @@
   padding: 2rem;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.box-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px; /* Example margin */
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.box{
+  position: relative;
+  height: 60px;
+  width:40px;
+  border: solid blue;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.red-box {
+  position: absolute;
+  top: 0; /* Adjust as needed */
+  right: 0; /* Adjust as needed */
+  z-index: 1;
+  border: 2px solid red; /* Example border */
+  border-radius: 5px; /* Example border radius */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Example box shadow */
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.cal2{
+  border: 2px solid;
+  padding: 5px;
+  h1{
+    border: 2px solid;
+     border-collapse: collapse;
   }
-  to {
-    transform: rotate(360deg);
-  }
+ 
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.select1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5px;
 }
-
-.card {
-  padding: 2em;
+.select2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5px;
 }
-
-.read-the-docs {
-  color: #888;
+.submits{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5px;
+  padding: 5px;
 }

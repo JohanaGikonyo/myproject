@@ -1,21 +1,71 @@
-import { useState , useEffect} from 'react'
-
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
 function App() {
- const [time, setTime]=useState(new Date())
-useEffect(()=>{
- const settingTime=setInterval(()=>{
-  setTime(new Date())
-},1000)
-return ()=>clearInterval(settingTime)
-},[])
+  const [num1, setNum1] = useState('');
+  const [num2, setNum2] = useState('');
+  const [percent, setPercent] = useState('');
+  const [showRedBox, setShowRedBox] = useState(false);
+
+  const percentage = () => {
+    setPercent((num1 / num2) * 100);
+  };
+
+  const clear = () => {
+    setNum1('');
+    setNum2('');
+    setPercent('');
+    setShowRedBox(false); // Reset to hide red box
+  };
+
+  const review = () => {
+    setShowRedBox(true); // Show red box when "PREVIEW" button is clicked
+  };
+
   return (
-    <>
-      <h2>{time.toLocaleTimeString()} hello</h2>
-      hi
-    </>
-  )
+    <div className='cal2'>
+      <h1 className='btn btn-block'>Calculation 2</h1>
+      <div>
+        <h4>Fabric Shrinkage Calculator</h4>
+        <div className='select1'>
+          <input type="text" placeholder="Enter fabric" />
+          <select name="" id="" placeholder="select Wash Type">
+            <option>calc</option>
+          </select>
+        </div>
+        <div className='select2'>
+          <label>Select Calculation Type:</label>
+          <select >
+            <option value="">X is what percentage of Y</option>
+          </select>
+        </div>
+        <input type="number" onChange={(e) => setNum1(e.target.value)} value={num1} />
+        <br />
+        <label>is what % of </label>
+        <br />
+        <input type="number" onChange={(e) => setNum2(e.target.value)} value={num2} />
+        <p className='color:"red"'>Answer {` ${percent} %`}</p>
+        <div className="box-container"> {/* Container for the boxes */}
+          <div className='d-flex '><p className='m-3'>60</p><div className="box"></div></div> {/* Original blue box */}
+          
+          {showRedBox && num1 && num2 && ( // Render red box if showRedBox is true and num1 and num2 are provided
+            <div
+              className="box red-box" /* Apply both classes */
+              style={{ width: `${num2}px` }}
+            >{num2}</div>
+          )}
+        </div>
+        <div className='submits'>
+          <button onClick={clear} className='btn btn-danger'>CLEAR</button>
+          <button onClick={percentage} className='btn btn-primary'>CALCULATE</button>
+        </div>
+        <div className='submits'>
+          <button className='btn btn-dark'>PRINT</button>
+          <button className='btn btn-success' onClick={review}>PREVIEW</button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
