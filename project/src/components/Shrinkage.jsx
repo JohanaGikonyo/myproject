@@ -30,7 +30,7 @@ function Shrinkage() {
   };
   return (
     <div>
-        <h1>Fabric Shrinkage Update</h1>
+        <h1>Fabrinc Shrinkage Update</h1>
         
         <div className='select1'>
               <input type="text" placeholder="Enter fabric" />
