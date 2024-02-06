@@ -46,13 +46,23 @@ function App() {
         <input type="number" onChange={(e) => setNum2(e.target.value)} value={num2} />
         <p className='color:"red"'>Answer {` ${percent} %`}</p>
         <div className="box-container"> {/* Container for the boxes */}
-          <div className='d-flex '><p className='m-3'>60</p><div className="box"></div></div> {/* Original blue box */}
+          <div className='d-flex '><p className='m-3'>{num2}</p>
+          {showRedBox && num1 && num2 && ( // Render red box if showRedBox is true and num1 and num2 are provided
+              <div
+                className="box" /* Apply both classes */
+                style={{ height: `${num2}vh` }}
+              ></div>
+            )}
+
+         
           
+          </div> {/* Original blue box */}
+
           {showRedBox && num1 && num2 && ( // Render red box if showRedBox is true and num1 and num2 are provided
             <div
               className="box red-box" /* Apply both classes */
-              style={{ width: `${num2}px` }}
-            >{num2}</div>
+              style={{ width: `${(((num1 / num2) * 100) / 100) * 40}vh` , height:`${num2}vh`}}
+            >{((((num1 / num2) * 100) / 100) * 40)}</div>
           )}
         </div>
         <div className='submits'>
