@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import './App.css';
-
+import Shrinkage from './components/Shrinkage';
+import { Route, Routes } from 'react-router-dom';
+import Navigations from './components/Navigations';
 function App() {
   const [num1, setNum1] = useState('');
   const [num2, setNum2] = useState('');
   const [percent, setPercent] = useState('');
   const [showRedBox, setShowRedBox] = useState(false);
   const [quiz, setQuiz] = useState('')
+  const [calc, setcalc]=useState(<h2>Calculator 2</h2>)
   const percentage = () => {
     if (quiz==="percentageOf"){
       setPercent((num1 / num2) * 100);
@@ -30,11 +33,12 @@ function App() {
   };
 
   return (
-    <div className='cal2'>
+    <div >
       {/* <h1 className='btn btn-block'>Calculation 2</h1> */}
       
-          <div>
+          <div className='cal2'>
             <h2>Fabric Shrinkage Calculator</h2>
+            <div>{calc}</div>
             <div className='select1'>
               <input type="text" placeholder="Enter fabric" />
               <select name="" id="" placeholder="select Wash Type" value="Select Wash Type">
@@ -43,7 +47,7 @@ function App() {
             </div>
             <div className='select2'>
               <label>Select Calculation Type:</label>
-              <select onChange={(e)=>{setQuiz(e.target.value)}}>
+              <select onChange={(e)=>{setQuiz(e.target.value),setcalc(<h2>Calculator 3</h2>)}}>
                 <option value="percentageOf">X is what percentage of Y</option>
                 <option value="percentage">What is X percentage of Y</option>
               </select>
@@ -118,7 +122,10 @@ function App() {
             </div>
           </div>
       
-
+<Navigations/>
+<Routes>
+<Route path='shrink' element={< Shrinkage/>}/>
+</Routes>
 
     </div>
   );

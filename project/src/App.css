@@ -22,11 +22,13 @@
   z-index: 1;
   border: 2px solid red; /* Example border */
   border-radius: 5px; /* Example border radius */
+  
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Example box shadow */
 }
 .cal2{
-  /* border: 2px solid; */
-  padding: 5px;
+  border: 2px solid;
+  background-color: rgb(216, 213, 213);
+  padding: 10px;
   h1{
     border: 2px solid;
      border-collapse: collapse;
@@ -52,4 +54,32 @@
   justify-content: space-around;
   margin: 5px;
   padding: 5px;
+}
+.opt{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .bw{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    color: blue;
+    input{
+      /* width: 25%; */
+      padding: 5px;
+      margin: 3px;
+    }
+    
+  }
+  .aw{
+    color: red;
+    display: flex;
+    margin: 20px;
+    flex-direction: row;
+    input{
+      /* width: 25%; */
+      padding: 5px;
+      margin: 5px;
+    }
+  }
 }
