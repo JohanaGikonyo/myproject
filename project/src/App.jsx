@@ -103,7 +103,7 @@ function App() {
                 <div
                   className="box red-box" /* Apply both classes */
                   style={{ width: `${percent}vh`, height: `${num2}vh` }}
-                >{num1}</div>
+                >{percent}</div>
               )}
             </div>
             </div>)
