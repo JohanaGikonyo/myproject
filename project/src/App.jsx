@@ -6,7 +6,7 @@ function App() {
   const [num2, setNum2] = useState('');
   const [percent, setPercent] = useState('');
   const [showRedBox, setShowRedBox] = useState(false);
-
+ const [quiz, setQuiz]=useState(false)
   const percentage = () => {
     setPercent((num1 / num2) * 100);
   };
@@ -24,19 +24,27 @@ function App() {
 
   return (
     <div className='cal2'>
-      <h1 className='btn btn-block'>Calculation 2</h1>
-      <div>
+      {/* <h1 className='btn btn-block'>Calculation 2</h1> */}
+      {
+        quiz?<div>
+
+          
+        </div>
+        
+        :
+         <div>
         <h4>Fabric Shrinkage Calculator</h4>
         <div className='select1'>
           <input type="text" placeholder="Enter fabric" />
-          <select name="" id="" placeholder="select Wash Type">
-            <option>calc</option>
+          <select name="" id="" placeholder="select Wash Type" value="Select Wash Type">
+            <option></option>
           </select>
         </div>
         <div className='select2'>
           <label>Select Calculation Type:</label>
           <select >
             <option value="">X is what percentage of Y</option>
+            <option value="">What is X percentage of Y</option>
           </select>
         </div>
         <input type="number" onChange={(e) => setNum1(e.target.value)} value={num1} />
@@ -74,6 +82,9 @@ function App() {
           <button className='btn btn-success' onClick={review}>PREVIEW</button>
         </div>
       </div>
+      }
+      
+     
     </div>
   );
 }
