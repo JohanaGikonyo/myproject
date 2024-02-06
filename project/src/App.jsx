@@ -50,7 +50,7 @@ function App() {
           { num1 && num2 && ( // Render red box if showRedBox is true and num1 and num2 are provided
               <div
                 className="box" /* Apply both classes */
-                style={{ height: `${num2}vh` }}
+                style={{ height: `${num2}vh`,width: `${num2}vh` }}
               ></div>
             )}
 
