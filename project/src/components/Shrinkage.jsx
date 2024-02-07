@@ -1,13 +1,15 @@
 import { useState } from "react";
 
 function Shrinkage() {
-
+  // const { names, option } = props; 
   const [W1, setW1] = useState(20);
   const [L1, setL1] = useState(30);
   const [W2, setW2] = useState('');
   const [L2, setL2] = useState('');
   const [name, setName]=useState('')
+  
   const [option, setOption]=useState()
+  
   const [percent, setPercent] = useState('');
   const [showRedBox, setShowRedBox] = useState(false);
 
@@ -26,37 +28,19 @@ function Shrinkage() {
     setPercent('');
     setShowRedBox(false); // Reset to hide red box
   };
+  const handleChange = (event) => {
+    setOption(event.target.value);
+  };
 
   const review = () => {
     setShowRedBox(true); // Show red box when "PREVIEW" button is clicked
   };
-  const handleChange = (event) => {
-    setOption(event.target.value);
-  };
+  
   return (
     <div className='cal2'>
-      <h3>Fabric Shrinkage Update</h3>
-      {
-          showRedBox?
-          <div className="reviews">
-            <h5 style={{color:"red"}}>Fabric % Increase/Decrease</h5>
-            <div>
-              <p>Fabric Name:<p style={{color:"red"}}>{name}</p></p>
-              <p>Fabric Wash Used:<p style={{color:"red"}}>{option}</p></p>
-            </div>
-            <div>
-              <p>BW Square Width:{W1}</p>
-              <p style={{color:"red"}}>AW Square Width:{W2}</p>
-              <p>BW Square Length:{L1}</p>
-              <p style={{color:"red"}}>AW Square Length:{L2}</p>
-            </div>
-            <div className=""><p>Fabric Shrinkage:<p style={{color:"red"}}>{percent}</p></p></div>
-          </div>
-          
-          :
-          <><div className='select1'>
-          <input type="text" placeholder="Enter fabric" onChange={(e)=>{setName(e.target.value)}} />
-          <select name="" onChange={handleChange} value={option}>
+      <div className='select1'>
+      <input type="text" placeholder="Enter fabric" onChange={(e)=>{setName(e.target.value)}} />
+       <select name="" onChange={handleChange} value={option}>
           <option value="">Select Wash Type</option>
             <option value="Raw Wash">Raw Wash</option>
             <option value="Stone Wash">Stone Wash</option>
@@ -75,13 +59,29 @@ function Shrinkage() {
             <option value="Wrapping up">Wrapping up</option>
             <option value="Other:">Other:</option>
           </select>
-        </div>
+          </div>
+      {
+          showRedBox?
+          <div className="reviews">
+            
+            <div>
+              <p>Fabric Name:<p style={{color:"red"}}>{name}</p></p>
+              <p>Fabric Wash Used:<p style={{color:"red"}}>{option}</p></p>
+            </div>
+            <div>
+              <p>BW Square Width:{W1}</p>
+              <p style={{color:"red"}}>AW Square Width:{W2}</p>
+              <p>BW Square Length:{L1}</p>
+              <p style={{color:"red"}}>AW Square Length:{L2}</p>
+            </div>
+            <div className=""><p>Fabric Shrinkage:<p style={{color:"red"}}>{percent}</p></p></div>
+          </div>
+          
+          :
+          <>
   
         <div >
-          <p>Select calculation Type:</p>
-          <select>
-            <option value="">Fabric % Increase/Decrease</option>
-          </select>
+        
           <div className="opt">
             <div className="bw">
               <div>
