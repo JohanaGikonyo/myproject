@@ -22,7 +22,7 @@
   z-index: 1;
   border: 2px solid red; /* Example border */
   border-radius: 5px; /* Example border radius */
-  
+
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Example box shadow */
 }
 .cal2{
@@ -89,7 +89,7 @@
   }
 }
 body{
-  background-color: rgb(243, 246, 248);
+  background-color: white;
   display: flex;
   align-items: center;
   input{
@@ -103,5 +103,16 @@ body{
     text-decoration: none;
     outline: none;
     border-radius: 3px;
+  }
+}
+.vrs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.reviews{
+  div, h5{
+    border-bottom: solid 2px rgb(134, 132, 132);
   }
 }

@@ -153,12 +153,13 @@ function App() {
               <button className='btn btn-dark'>PRINT</button>
               <button className='btn btn-success' onClick={review}>PREVIEW</button>
             </div>
-          </div>
+          </div><br/><br/>
       
-<Navigations/>
+{/* <Navigations/>
 <Routes>
 <Route path='shrink' element={< Shrinkage/>}/>
-</Routes>
+</Routes> */}
+< Shrinkage/>
 
     </div>
   );
