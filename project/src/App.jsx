@@ -7,7 +7,7 @@ function App() {
   const [num2, setNum2] = useState(30);
   const [percent, setPercent] = useState();
   const [showRedBox, setShowRedBox] = useState(false);
-  const [quiz, setQuiz] = useState('percentageOf');
+  const [quiz, setQuiz] = useState('percentage');
   const [calc, setCalc] = useState();
   const [answer, setAnswer] = useState('');
   const [name, setName]=useState('')

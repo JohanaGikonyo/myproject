@@ -7,7 +7,7 @@ function Shrinkage() {
   const [W2, setW2] = useState('');
   const [L2, setL2] = useState('');
   const [name, setName]=useState('')
-  
+  // const [display, setdisplay]=useState(false)
   const [option, setOption]=useState()
   
   const [percent, setPercent] = useState('');
